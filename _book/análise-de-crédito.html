@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Análise de crédito | Conhecimentos e técnicas essenciais para um cientista de dados</title>
+  <meta name="description" content="Esse projeto é uma iniciativa muito mais voltada à sistematização do negócio Stone na forma de conhecimentos e técnicas essenciais para análise de dados do que um compilado de técnicas, códigos e implementação de algoritmos" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Análise de crédito | Conhecimentos e técnicas essenciais para um cientista de dados" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Esse projeto é uma iniciativa muito mais voltada à sistematização do negócio Stone na forma de conhecimentos e técnicas essenciais para análise de dados do que um compilado de técnicas, códigos e implementação de algoritmos" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Análise de crédito | Conhecimentos e técnicas essenciais para um cientista de dados" />
+  <meta name="twitter:site" content="@lahunmen" />
+  <meta name="twitter:description" content="Esse projeto é uma iniciativa muito mais voltada à sistematização do negócio Stone na forma de conhecimentos e técnicas essenciais para análise de dados do que um compilado de técnicas, códigos e implementação de algoritmos" />
+  
+
+<meta name="author" content="Bruno Pinheiro" />
+
+
+<meta name="date" content="2020-02-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="gestão-de-risco.html"/>
+<link rel="next" href="probabilidade.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a></li>
+<li class="chapter" data-level="" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i>Introducao</a></li>
+<li class="chapter" data-level="1" data-path="gestão-de-risco.html"><a href="gestão-de-risco.html"><i class="fa fa-check"></i><b>1</b> Gestão de risco</a><ul>
+<li class="chapter" data-level="1.1" data-path="gestão-de-risco.html"><a href="gestão-de-risco.html#começando-do-começo-o-que-é-risco"><i class="fa fa-check"></i><b>1.1</b> Começando do começo: o que é risco?</a></li>
+<li class="chapter" data-level="1.2" data-path="gestão-de-risco.html"><a href="gestão-de-risco.html#ferramentas-fundantes-da-gestão-de-risco"><i class="fa fa-check"></i><b>1.2</b> Ferramentas fundantes da gestão de risco</a></li>
+<li class="chapter" data-level="1.3" data-path="gestão-de-risco.html"><a href="gestão-de-risco.html#abordagens-de-gestão-de-risco"><i class="fa fa-check"></i><b>1.3</b> Abordagens de gestão de risco</a></li>
+<li class="chapter" data-level="1.4" data-path="gestão-de-risco.html"><a href="gestão-de-risco.html#a-análise-de-crédito-focos-e-preocupações"><i class="fa fa-check"></i><b>1.4</b> A análise de crédito: focos e preocupações</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html"><i class="fa fa-check"></i><b>2</b> Análise de crédito</a><ul>
+<li class="chapter" data-level="2.1" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#conceitos-essenciais"><i class="fa fa-check"></i><b>2.1</b> Conceitos essenciais</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#probabilidade-de-default-pd"><i class="fa fa-check"></i><b>2.1.1</b> Probabilidade de default (PD)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#exposição-à-inadimplência-exposure-at-default---ead"><i class="fa fa-check"></i><b>2.1.2</b> Exposição à inadimplência (<em>Exposure at Default</em> - EAD)</a></li>
+<li class="chapter" data-level="2.1.3" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#perda-com-inadimplência-loss-given-default---lgd"><i class="fa fa-check"></i><b>2.1.3</b> Perda com inadimplência (<em>Loss Given Default</em> - LGD)</a></li>
+<li class="chapter" data-level="2.1.4" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#perda-esperada-expected-loss---el"><i class="fa fa-check"></i><b>2.1.4</b> Perda esperada (<em>Expected Loss</em> - EL)</a></li>
+<li class="chapter" data-level="2.1.5" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#valor-em-risco-value-at-risk---var"><i class="fa fa-check"></i><b>2.1.5</b> Valor em Risco (<em>Value at Risk</em> - VAR)</a></li>
+<li class="chapter" data-level="2.1.6" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#provisão-para-débitos-duvidos---pdd"><i class="fa fa-check"></i><b>2.1.6</b> Provisão para Débitos Duvidos - PDD</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#como-os-negócios-podem-ser-modelados-pelas-ações-governamentais"><i class="fa fa-check"></i><b>2.2</b> Como os negócios podem ser modelados pelas ações governamentais</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#ambiente-e-políticas-públicas"><i class="fa fa-check"></i><b>2.2.1</b> Ambiente e políticas públicas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#infraestrutura-física-e-humana"><i class="fa fa-check"></i><b>2.2.2</b> Infraestrutura física e humana</a></li>
+<li class="chapter" data-level="2.2.3" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#mercado-financeiro"><i class="fa fa-check"></i><b>2.2.3</b> Mercado financeiro</a></li>
+<li class="chapter" data-level="2.2.4" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#fatores-macroeconômicos"><i class="fa fa-check"></i><b>2.2.4</b> Fatores macroeconômicos</a></li>
+<li class="chapter" data-level="2.2.5" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#risco-de-substituição-por-importações"><i class="fa fa-check"></i><b>2.2.5</b> Risco de substituição por importações</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#riscos-industriais"><i class="fa fa-check"></i><b>2.3</b> Riscos industriais</a></li>
+<li class="chapter" data-level="2.4" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#risco-inerente-ao-negócio"><i class="fa fa-check"></i><b>2.4</b> Risco inerente ao negócio</a></li>
+<li class="chapter" data-level="2.5" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#indicadores-financeiros"><i class="fa fa-check"></i><b>2.5</b> Indicadores financeiros</a></li>
+<li class="chapter" data-level="2.6" data-path="análise-de-crédito.html"><a href="análise-de-crédito.html#modelagem-financeira"><i class="fa fa-check"></i><b>2.6</b> Modelagem financeira</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="probabilidade.html"><a href="probabilidade.html"><i class="fa fa-check"></i><b>3</b> Probabilidade</a><ul>
+<li class="chapter" data-level="3.1" data-path="probabilidade.html"><a href="probabilidade.html#propriedades-das-distribuições-de-probabilidade"><i class="fa fa-check"></i><b>3.1</b> Propriedades das distribuições de probabilidade</a></li>
+<li class="chapter" data-level="3.2" data-path="probabilidade.html"><a href="probabilidade.html#tipos-de-probabilidade"><i class="fa fa-check"></i><b>3.2</b> Tipos de probabilidade</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="probabilidade.html"><a href="probabilidade.html#probabilidade-marginal"><i class="fa fa-check"></i><b>3.2.1</b> Probabilidade marginal</a></li>
+<li class="chapter" data-level="3.2.2" data-path="probabilidade.html"><a href="probabilidade.html#probabilidade-condicional"><i class="fa fa-check"></i><b>3.2.2</b> Probabilidade condicional</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>4</b> Regressão Linear</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Conhecimentos e técnicas essenciais para um cientista de dados</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="análise-de-crédito" class="section level1">
+<h1><span class="header-section-number">2</span> Análise de crédito</h1>
+<div id="conceitos-essenciais" class="section level2">
+<h2><span class="header-section-number">2.1</span> Conceitos essenciais</h2>
+<div id="probabilidade-de-default-pd" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Probabilidade de default (PD)</h3>
+<p>A probabilidade de default representa a chance de um cliente não cumprir a sua obrigação financeira após um intervalo específico de tempo. Geralmente é mensurado usando o histórico de empréstimos dos clientes. Ao possibilitar a estimação individual da probabilidade de um empréstimo não ser pago, habilita calcular a taxa de inadimplência em um período de tempo específico. É atribuído ao nível de risco e cada nível tem uma probabilidade de default própria.</p>
+</div>
+<div id="exposição-à-inadimplência-exposure-at-default---ead" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Exposição à inadimplência (<em>Exposure at Default</em> - EAD)</h3>
+<p>Exposição à inadimplência refere-se ao valor total que a instituição credora está exposta quando um cliente dá calote. Geralmente as instituições usam um sistema interno de pontuação para calcular o próprio risco e usam um sistema interno de gestão de risco para estimar o sistema de exposição. Também é conhecida como exposição ao crédito fora da indústria bancária.</p>
+</div>
+<div id="perda-com-inadimplência-loss-given-default---lgd" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Perda com inadimplência (<em>Loss Given Default</em> - LGD)</h3>
+<p>É uma forma de mensura a perda esperada e a representa como um percentual. Diz respeito à quantia não recuperada pelo credor após a venda da dívida em caso de default. É de difícil estimação quando as perdas são muito diferentes do esperado e também quando um segmento é estatiscamente pequeno na base de clientes. LGD industriais geralmente estão disponíveis em <em>bureaus de crédito</em>.</p>
+<blockquote>
+<p>Tanto a probabilidade de default como a Perda com Inadimplência tem validade por um determinado ciclo econômico e precisam ser reavaliados quando há mudanças no ambiente econômico ou na composição do portifólio/carteira.</p>
+</blockquote>
+</div>
+<div id="perda-esperada-expected-loss---el" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Perda esperada (<em>Expected Loss</em> - EL)</h3>
+<p>É calculada da seguinte maneira:</p>
+<p><span class="math display">\[EL = EAD \times PD \times LGD\]</span></p>
+</div>
+<div id="valor-em-risco-value-at-risk---var" class="section level3">
+<h3><span class="header-section-number">2.1.5</span> Valor em Risco (<em>Value at Risk</em> - VAR)</h3>
+</div>
+<div id="provisão-para-débitos-duvidos---pdd" class="section level3">
+<h3><span class="header-section-number">2.1.6</span> Provisão para Débitos Duvidos - PDD</h3>
+<p>Em inglês é chamado de <em>Allowance For Doubtful Accounts</em>. Diz respeito ao montante que a instituição de crédito esima que será preciso provisionar para estabilizar o balanço considerando apenas a quantia que ela espera receber dos empréstimos que concede. Em outros termos, é um contra-ativo que a instituição reserva para cobrir o prejuízo realizado.</p>
+<p>$$PDD = EAD - EL</p>
+</div>
+</div>
+<div id="como-os-negócios-podem-ser-modelados-pelas-ações-governamentais" class="section level2">
+<h2><span class="header-section-number">2.2</span> Como os negócios podem ser modelados pelas ações governamentais</h2>
+<p>As regras governamentais e mesmo sua situação fiscal afetam a performance das empresas. A disponibilidade e característica dos recursos físicos e humanos também determinam os tipos de negócios mais e menos prósperos em cada lugar.</p>
+<p>“regulations and legal systems affected an entity’s ability to register with the sovereign government, to obtain credit, to hire and terminate employees, to enforce contracts, and to utilize the bankruptcy courts” <span class="citation">(Ganguin and Bilardello <a href="#ref-ganguin_fundamentals_2005">2005</a>,)</span></p>
+<div id="ambiente-e-políticas-públicas" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Ambiente e políticas públicas</h3>
+<div id="ambiente-regulatório" class="section level4">
+<h4><span class="header-section-number">2.2.1.1</span> Ambiente regulatório</h4>
+</div>
+<div id="tarifas-de-importação" class="section level4">
+<h4><span class="header-section-number">2.2.1.2</span> Tarifas de importação</h4>
+</div>
+<div id="política-fiscal" class="section level4">
+<h4><span class="header-section-number">2.2.1.3</span> Política fiscal</h4>
+</div>
+<div id="política-monetária" class="section level4">
+<h4><span class="header-section-number">2.2.1.4</span> Política monetária</h4>
+</div>
+<div id="política-cambial" class="section level4">
+<h4><span class="header-section-number">2.2.1.5</span> Política cambial</h4>
+</div>
+<div id="riscos-políticos-e-legais" class="section level4">
+<h4><span class="header-section-number">2.2.1.6</span> Riscos políticos e legais</h4>
+</div>
+</div>
+<div id="infraestrutura-física-e-humana" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Infraestrutura física e humana</h3>
+<div id="infraestrutura-física" class="section level4">
+<h4><span class="header-section-number">2.2.2.1</span> Infraestrutura física</h4>
+</div>
+<div id="trabalho" class="section level4">
+<h4><span class="header-section-number">2.2.2.2</span> Trabalho</h4>
+</div>
+</div>
+<div id="mercado-financeiro" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Mercado financeiro</h3>
+<div id="sistema-bancário" class="section level4">
+<h4><span class="header-section-number">2.2.3.1</span> Sistema bancário</h4>
+</div>
+<div id="sistema-de-contas" class="section level4">
+<h4><span class="header-section-number">2.2.3.2</span> Sistema de contas</h4>
+</div>
+</div>
+<div id="fatores-macroeconômicos" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Fatores macroeconômicos</h3>
+<div id="gasto-com-consumo" class="section level4">
+<h4><span class="header-section-number">2.2.4.1</span> Gasto com consumo</h4>
+</div>
+<div id="inflação-e-taxa-de-juros" class="section level4">
+<h4><span class="header-section-number">2.2.4.2</span> Inflação e taxa de juros</h4>
+</div>
+</div>
+<div id="risco-de-substituição-por-importações" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Risco de substituição por importações</h3>
+</div>
+</div>
+<div id="riscos-industriais" class="section level2">
+<h2><span class="header-section-number">2.3</span> Riscos industriais</h2>
+<p>Cada setor industrial tem seu próprio risco embutido e a forma que ele se define afeta de forma particular as empresas de setores diferentes.</p>
+<ul>
+<li>Padrões de crescimento de vendas (alto, maturo, cíclico)</li>
+<li>Barreiras de entrada</li>
+<li>Análise de sobrevivência</li>
+</ul>
+</div>
+<div id="risco-inerente-ao-negócio" class="section level2">
+<h2><span class="header-section-number">2.4</span> Risco inerente ao negócio</h2>
+<ul>
+<li>Análise competitiva e do competidor</li>
+<li>Fatores que dirigem a competição e influenciam o sucesso e fracasso empresarial</li>
+<li>Importância e limitações da análise de <em>market share</em></li>
+<li>Outros elementos que afetam a consistência e volatilidade da performance operacional, como diversidade, flexibilidade, tamanho e regulações.</li>
+</ul>
+</div>
+<div id="indicadores-financeiros" class="section level2">
+<h2><span class="header-section-number">2.5</span> Indicadores financeiros</h2>
+<ul>
+<li>Balanço financeiro e patrimonial</li>
+<li>Lucratividade</li>
+<li>Geração de caixa</li>
+<li>Liquidez</li>
+<li>Taxas mais importantes e como interpretá-las</li>
+</ul>
+</div>
+<div id="modelagem-financeira" class="section level2">
+<h2><span class="header-section-number">2.6</span> Modelagem financeira</h2>
+<ul>
+<li>Projeção de fluxo de caixa e outros indicadores de crédito</li>
+</ul>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-ganguin_fundamentals_2005">
+<p>Ganguin, Blaise, and John Bilardello. 2005. <em>Fundamentals of Corporate Credit Analysis</em>. New York: McGraw-Hill.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="gestão-de-risco.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probabilidade.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
