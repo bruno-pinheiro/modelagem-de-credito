@@ -19,7 +19,7 @@ biblio-style: "apalike"
 link-citations: true
 ---
 
-# Prefacio {-}
+# Prefácio {-}
 
 Aqui vou sistematizar meus estudos.
 

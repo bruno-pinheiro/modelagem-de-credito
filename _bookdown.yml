@@ -2,6 +2,13 @@ book_filename: "modelage-de-credito"
 delete_merged_file: true
 new_session: yes
 rmd_files:
-  html: ["index.Rmd", "01-Intro.Rmd", "02-Gestao-de-Risco-e-Analise-de-Credito.Rmd", "03-Analise-de-Credito.Rmd", "04-Probabilidade.Rmd", "05-Modelos-Lineares.Rmd"]
-  latex: ["index.Rmd", "01-Intro.Rmd", "02-Gestao-de-Risco-e-Analise-de-Credito.Rmd", "03-Analise-de-Credito.Rmd", "04-Probabilidade.Rmd", "05-Modelos-Lineares.Rmd"]
+  html: ["index.Rmd", "01-Intro.Rmd", "02-Gestao-de-Risco-e-Analise-de-Credito.Rmd", "03-Analise-de-Credito.Rmd", "04-Probabilidade.Rmd", "05-Modelos-Lineares.Rmd", "99-references.Rmd"]
+  latex: ["index.Rmd", "01-Intro.Rmd", "02-Gestao-de-Risco-e-Analise-de-Credito.Rmd", "03-Analise-de-Credito.Rmd", "04-Probabilidade.Rmd", "05-Modelos-Lineares.Rmd", "99-references.Rmd"]
 output_dir: "docs"
+language:
+  label:
+    fig: "Figura "
+    tab: "Tabela "
+  ui:
+    edit: "Editar "
+    chapter_name: "Capítulo "
